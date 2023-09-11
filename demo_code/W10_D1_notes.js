@@ -51,4 +51,16 @@
 
     **EXPRESS WORKS TOP => DOWN**
 
+    Important Request Object Properties
+        1) req.body
+            * Where request body content can be found
+            * Requires app.use(express.json()) global middleware
+        2) req.params
+            * Dynamic part of the path/url
+            * Use a ":" in the path to signify the param
+        3) req.query
+            * Dynamic part of the path/url
+            * Starts with "?" in the url
+            * Multiple queries separated by "&"
+
 */
