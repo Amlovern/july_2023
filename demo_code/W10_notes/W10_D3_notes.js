@@ -28,4 +28,17 @@ VALUES
 (data set 1),
 (data set 2),
 etc;
+
+
+Querying the DB
+All queries need at least 2 statements: SELECT and FROM
+    * SELECT - What columns do you want?
+    * FROM - What table are you querying?
+We can do so much more than that!
+    * WHERE - Allows us to filter or target specific values
+        ** Can chain multiple filters AND/OR
+
+Updating and Deleting from a DB
+    * DELETE FROM <table name> WHERE <condition>;
+    * UPDATE <table name> SET <column name> = <value> WHERE <condition>;
 */
