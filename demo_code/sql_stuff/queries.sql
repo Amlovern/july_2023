@@ -53,3 +53,23 @@ AND num_episodes > 50 AND avg_rating > 6
 ORDER BY main_char
 LIMIT 3
 OFFSET 3;
+
+SELECT anime.id AS anime_id, anime.title, production_studios.id, production_studios.name
+FROM production_studios
+JOIN anime ON (anime.studio_id = production_studios.id);
+-- JOIN <table> ON (<table>.id = <other table>.<FK column>)
+
+--How do I get from anime to genres
+SELECT anime.title, genres.name
+FROM anime
+JOIN anime_genres ON (anime_genres.anime_id = anime.id)
+JOIN genres ON (anime_genres.genre_id = genres.id);
+
+--All anime that are from a studio that has 'a' in its name
+--give me anime title, studio name, and what genre it is
+SELECT anime.title, production_studios.name, genres.name
+FROM production_studios
+JOIN anime ON (anime.studio_id = production_studios.id)
+JOIN anime_genres ON (anime_genres.anime_id = anime.id)
+JOIN genres ON (anime_genres.genre_id = genres.id)
+WHERE production_studios.name LIKE '%a%';
