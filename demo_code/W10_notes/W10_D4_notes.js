@@ -41,4 +41,10 @@ We can perform math operations inside of a SELECT
     * This doesn't actually change anything in our DB
 We can alias our columns inside of a SELECT
     * SELECT <column> AS <alias> FROM <table>;
+
+
+Writing queries that join different tables together
+    JOIN <table> ON (<table>.id = <other table>.<FK column>)
+    The ON keyword tells SQL what the association is
+    Using dot notation to deal with ambiquity
 */
