@@ -73,3 +73,28 @@ JOIN anime ON (anime.studio_id = production_studios.id)
 JOIN anime_genres ON (anime_genres.anime_id = anime.id)
 JOIN genres ON (anime_genres.genre_id = genres.id)
 WHERE production_studios.name LIKE '%a%';
+
+
+SELECT MIN(num_episodes) FROM anime;
+
+SELECT AVG(avg_rating) FROM anime;
+
+SELECT COUNT(*) FROM anime
+WHERE studio_id = 4;
+
+SELECT TOTAL(avg_rating) FROM anime;
+
+SELECT AVG(avg_rating), studio_id FROM anime
+GROUP BY studio_id
+HAVING AVG(avg_rating) > 8.7;
+
+-- All of the info of all of our anime and their studio
+SELECT *
+FROM anime
+JOIN production_studios ON (anime.studio_id = production_studios.id);
+
+SELECT * FROM anime
+WHERE studio_id IN (
+    SELECT id FROM production_studios
+    WHERE name LIKE 'studio%'
+);
