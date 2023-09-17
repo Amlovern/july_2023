@@ -1,3 +1,24 @@
 [submodule "student_practices/W11/D1/practice-for-week-11-improve-sql-queries-short-practice"]
 	path = student_practices/W11/D1/practice-for-week-11-improve-sql-queries-short-practice
 	url = https://github.com/appacademy/practice-for-week-11-improve-sql-queries-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-combining-express-sequelize-short-practice"]
+	path = student_practices/W11/D2/1-practice-for-week-11-combining-express-sequelize-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-combining-express-sequelize-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-create-migration-short-practice"]
+	path = student_practices/W11/D2/2-practice-for-week-11-sequelize-create-migration-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-create-migration-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-undo-migrations-short-practice"]
+	path = student_practices/W11/D2/3-practice-for-week-11-sequelize-undo-migrations-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-undo-migrations-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-models-short-practice"]
+	path = student_practices/W11/D2/4-practice-for-week-11-sequelize-models-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-models-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-seeders-short-practice"]
+	path = student_practices/W11/D2/5-practice-for-week-11-sequelize-seeders-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-seeders-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-validations-and-constraints-short-practice"]
+	path = student_practices/W11/D2/6-practice-for-week-11-sequelize-validations-and-constraints-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-validations-and-constraints-short-practice.git
+[submodule "student_practices/W11/D2/practice-for-week-11-sequelize-modify-table-migrations-short-practice"]
+	path = student_practices/W11/D2/7-practice-for-week-11-sequelize-modify-table-migrations-short-practice
+	url = https://github.com/appacademy/practice-for-week-11-sequelize-modify-table-migrations-short-practice.git
