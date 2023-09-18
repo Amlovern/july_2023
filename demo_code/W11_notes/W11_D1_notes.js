@@ -57,5 +57,13 @@ Questions 3
     What is the difference between Lazy load and Eager load?
         lazy loading is getting it when you need it, eager loading is where you get it beforehand
 
+    SQL Injection attacks
+        When someone is able to inject SQL directly into your code through a blatant opening.
+
+
+    Biggest takeaways from today:
+        1. How to benchmark queries
+        2. How to recognize N+1 queries
+
 
 */
