@@ -11,7 +11,8 @@ app.use(express.json());
 router.post('/search', (req, res, next) => {
     if (req.body.filter.length > 0) {
         const searchTerm = req.body.filter;
-        const sql = `SELECT * FROM boardgames WHERE name = '${searchTerm}';`;
+        if (searchTerm.includes(';')) return 'Don\' be a jerk'
+        const sql = `SELECT * FROM boardgames WHERE name = '${searchTerm}';`; // 'Rising Sun'; DROP TABLE user_data;
         db.exec(sql, (err) => {
             if (err) {
                 next(err)
