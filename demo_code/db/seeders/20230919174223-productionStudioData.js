@@ -12,12 +12,22 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('ProductionStudios',
+   const { ProductionStudio } = require('../models')
+    // await queryInterface.bulkInsert('ProductionStudios',
+    //   [
+    //     {name: 'Mappa', location: 'Japan', yearEstablished: 2011},
+    //     {name: 'Bones', location: 'Japan', yearEstablished: 1998},
+    //     {name: 'White Fox', location: 'Japan', yearEstablished: 2007}
+    //   ]
+    // )
+
+    await ProductionStudio.bulkCreate(
       [
         {name: 'Mappa', location: 'Japan', yearEstablished: 2011},
         {name: 'Bones', location: 'Japan', yearEstablished: 1998},
-        {name: 'White Fox', location: 'Japan', yearEstablished: 2007}
-      ]
+        {name: 'White Fox', location: 'Japan', yearEstablished: 2007},
+        {name: 'White Fox2', location: 'Japan', yearEstablished: 2007}
+      ], {validate: true}
     )
   },
 
@@ -28,5 +38,8 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('ProductionStudios', {
+      name: ['Mappa', 'Bones', 'White Fox']
+    })
   }
 };
