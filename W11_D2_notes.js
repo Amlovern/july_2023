@@ -21,6 +21,7 @@ File types
             npx dotenv sequelize db:migrate
             npx dotenv sequelize db:migrate:undo
             npx dotenv sequelize db:migrate:undo:all
+            npx sequelize migration:generate --name add-unique-yearEstablished
         Important notes
             Every migrations file has an up and down
             Migrations act as version control
