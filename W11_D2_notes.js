@@ -41,11 +41,30 @@ File types
     Seeders
         For inserting initial data into our tables
         CLI Commands:
+            npx sequelize seed:generate --name productionStudioData
+            npx dotenv sequelize db:seed:all
+            npx dotenv sequelize db:seed:undo
+            npx dotenv sequelize db:seed:undo:all
+
+        Important notes:
+            bulkInsert tests table constraints, but NOT model constraints
 
 2 types of commands: 
     1. Commands that create files
     2. Commands that interact with DB
         These require us to add dotenv to the command
+
+To reset the DB:
+    Undo Seeds
+        npx dotenv sequelize db:seed:undo:all
+    Undo Migrations 
+        npx dotenv sequelize db:migrate:undo:all
+    Migrate
+        npx dotenv sequelize db:migrate
+    Seed
+        npx dotenv sequelize db:seed:all
+
+"dbreset": "npx dotenv sequelize db:seed:undo:all && npx dotenv sequelize db:migrate:undo:all && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all"
 
 
 */
