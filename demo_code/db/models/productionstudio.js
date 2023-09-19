@@ -17,15 +17,32 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING(200),
       allowNull: false,
-      unique: true
+      unique: true,
+      validate: {
+        len: [3, 200]
+      }
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isAnime(value) {
+          if (value !== 'Japan') {
+            throw new Error('Anime comes from Japan!')
+          }
+        }
+      }
     },
     yearEstablished: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        max: {
+          args: [2023],
+          msg: 'Go back to the future where you came from!'
+        },
+        min: 1920
+      }
     }
   }, {
     sequelize,
