@@ -15,7 +15,13 @@ module.exports = {
    const { AnimeGenre } = require('../models')
    AnimeGenre.bulkCreate(
     [
-      {animeId: 1, genreId: 2}
+      {animeId: 1, genreId: 2},
+      {animeId: 2, genreId: 3},
+      {animeId: 3, genreId: 4},
+      {animeId: 4, genreId: 5},
+      {animeId: 1, genreId: 5},
+      {animeId: 2, genreId: 4},
+      {animeId: 3, genreId: 3},
     ], {validate: true}
    )
   },
@@ -27,5 +33,8 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('AnimeGenres', {
+      animeId: [1, 2, 3, 4]
+    })
   }
 };
