@@ -37,4 +37,26 @@ Delete
     <model>.destroy() - NOT Recommended
     <instance>.destroy()
 
+
+Relationships in Sequelize
+
+To tell Sequelize that a col is a FK, we need to add a couple properties
+    references
+    onDelete (if desired)
+
+3 types of Associations
+    One to One
+        hasOne - not used much
+    One to Many
+        belongsTo
+        hasMany
+        The model with the FK is the belongsTo
+    Many to Many
+        belongsToMany
+
+
+
+
+
+
 */
