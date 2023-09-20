@@ -26,7 +26,14 @@ module.exports = {
         {name: 'Mappa', location: 'Japan', yearEstablished: 2011},
         {name: 'Bones', location: 'Japan', yearEstablished: 1998},
         {name: 'White Fox', location: 'Japan', yearEstablished: 2007},
-        {name: 'White Fox2', location: 'Japan', yearEstablished: 2007}
+        {name: 'Madhouse', location: 'Japan', yearEstablished: 1972},
+        {name: 'A-1 Pictures', location: 'Japan', yearEstablished: 2005},
+        {name: 'Kyoto Animation', location: 'Japan', yearEstablished: 1985},
+        {name: 'ufotable', location: 'Japan', yearEstablished: 2000},
+        {name: 'Sunrise', location: 'Japan', yearEstablished: 1976},
+        {name: 'Studio Gokumi', location: 'Japan', yearEstablished: 2010},
+        {name: 'Studio Ghibli', location: 'Japan', yearEstablished: 1985},
+        {name: 'Pierrot', location: 'Japan', yearEstablished: 1979},
       ], {validate: true}
     )
   },
