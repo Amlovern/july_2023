@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Op } = require("sequelize");
-const { ProductionStudio } = require('../db/models');
+const { ProductionStudio, Anime, Genre } = require('../db/models');
 
 router.get('/', async (req, res) => {
     const studioData = await ProductionStudio.findAll({
@@ -92,6 +92,36 @@ router.delete('/:id', async (req, res) => {
     await studio.destroy();
 
     res.json(studio)
+})
+
+router.get('/anime', async(req, res) => {
+    // const anime = await ProductionStudio.findAll({
+    //     // include: {
+    //     //     model: Anime,
+    //     //     where: {
+    //     //         avgRating: {
+    //     //             [Op.gt]: 9
+    //     //         }
+    //     //     }
+    //     // },
+    //     // attributes: ['name']
+    //     include: {
+    //         model: Anime,
+    //         include: {
+    //             model: Genre,
+    //             through: {
+    //                 attributes: []
+    //             }
+    //         }
+    //     }
+    // })
+    
+
+    const anime = await Anime.findAll({
+        include: [ProductionStudio, Genre]
+    })
+
+    res.json(anime)
 })
 
 
