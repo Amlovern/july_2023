@@ -25,13 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     location: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isAnime(value) {
-          if (value !== 'Japan') {
-            throw new Error('Anime comes from Japan!')
-          }
-        }
-      }
+      // validate: {
+      //   isAnime(value) {
+      //     if (value !== 'Japan') {
+      //       throw new Error('Anime comes from Japan!')
+      //     }
+      //   }
+      // }
     },
     yearEstablished: {
       type: DataTypes.INTEGER,
