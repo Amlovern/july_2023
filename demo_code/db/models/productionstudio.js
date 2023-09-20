@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ProductionStudio.hasMany(models.Anime, {
+        foreignKey: 'studioId',
+        onDelete: 'CASCADE',
+        hooks: true
+      })
+      //SELECT * FROM ProductionStudio
+      //JOIN Anime ON (ProductionStudio.id = Anime.studioId);
     }
   }
   ProductionStudio.init({

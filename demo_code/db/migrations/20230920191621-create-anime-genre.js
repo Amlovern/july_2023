@@ -2,41 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Animes', {
+    await queryInterface.createTable('AnimeGenres', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      releaseYear: {
-        type: Sequelize.INTEGER
-      },
-      numEpisodes: {
-        type: Sequelize.INTEGER
-      },
-      type: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      completed: {
-        type: Sequelize.BOOLEAN
-      },
-      avgRating: {
-        type: Sequelize.DECIMAL(3,2)
-      },
-      studioId: {
+      animeId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'ProductionStudios',
+          model: 'Animes',
           key: 'id'
-        },
-        onDelete: 'CASCADE'
+        }
+      },
+      genreId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Genres',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -51,6 +36,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Animes');
+    await queryInterface.dropTable('AnimeGenres');
   }
 };

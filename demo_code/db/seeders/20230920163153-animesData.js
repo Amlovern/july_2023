@@ -27,8 +27,8 @@ module.exports = {
       {title: 'Black Clover', releaseYear: 2017, numEpisodes: 170, type: 'show', completed: true, avgRating: 8.15, studioId: 11},
       {title: 'Chainsaw Man', releaseYear: 2022, numEpisodes: 12, type: 'show', completed: true, avgRating: 8.56, studioId: 1},
       {title: 'My Hero Academia', releaseYear: 2016, numEpisodes: 12, type: 'show', completed: true, avgRating: 7.88, studioId: 2},
-      {title: '', releaseYear: 2009, numEpisodes: 64, type: 'show', completed: true, avgRating: 9, studioId: 2},
-      {title: '', releaseYear: 2009, numEpisodes: 64, type: 'show', completed: true, avgRating: 9, studioId: 2},
+      {title: 'One Punch Man', releaseYear: 2015, numEpisodes: 12, type: 'show', completed: true, avgRating: 8.5, studioId: 4},
+      {title: 'InuYasha', releaseYear: 2000, numEpisodes: 167, type: 'show', completed: true, avgRating: 7.86, studioId: 8},
     ], {validate: true}
    )
   },
@@ -40,5 +40,8 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Animes', {
+      title: ['Fullmetal Alchemist: Brotherhood', 'Steins;Gate', 'Hunter x Hunter', 'Love is War: Ultra Romantic', 'A Silent Voice', 'Demon Slayer', 'Cowboy Bebop', 'Reborn as a Vending Machine, I Now Wander the Dungeon', 'Kiki\'s Delivery Service', 'Black Clover', 'Chainsaw Man', 'My Hero Academia', 'One Punch Man', 'InuYasha']
+    })
   }
 };
