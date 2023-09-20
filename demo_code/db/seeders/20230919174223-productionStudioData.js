@@ -46,7 +46,7 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
     await queryInterface.bulkDelete('ProductionStudios', {
-      name: ['Mappa', 'Bones', 'White Fox']
+      name: ['Mappa', 'Bones', 'White Fox', 'Madhouse', 'A-1 Pictures', 'Kyoto Animation', 'ufotable', 'Sunrise', 'Studio Gokumi', 'Studio Ghibli', 'Pierrot']
     })
   }
 };
