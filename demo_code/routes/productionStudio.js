@@ -66,5 +66,33 @@ router.post('/create', async (req, res) => {
     res.json(newStudio)
 })
 
+router.put('/:id', async (req, res) => {
+    const { name, location, yearEstablished } = req.body;
+
+    const studio = await ProductionStudio.findByPk(req.params.id);
+
+    if (name !== undefined) {
+        studio.name = name;
+    };
+    if (location) {
+        studio.location = location;
+    };
+    if (yearEstablished) {
+        studio.yearEstablished = yearEstablished;
+    };
+
+    await studio.save()
+
+    res.json(studio)
+})
+
+router.delete('/:id', async (req, res) => {
+    const studio = await ProductionStudio.findByPk(req.params.id);
+
+    await studio.destroy();
+
+    res.json(studio)
+})
+
 
 module.exports = router;

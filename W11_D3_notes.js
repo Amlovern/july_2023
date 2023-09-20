@@ -23,6 +23,18 @@ Creating record
     Create
         Does all 3
 
+Update
+    <model>.update - NOT Recommended
+        Requires a where
+    Object property assignment - MAJOR PREFERENCE
+        Must save()
+    Instance.set()
+        Must save()
+    Instance.update()
 
+
+Delete
+    <model>.destroy() - NOT Recommended
+    <instance>.destroy()
 
 */
