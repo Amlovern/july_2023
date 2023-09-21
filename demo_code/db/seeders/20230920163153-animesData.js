@@ -12,6 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+  
    const { Anime } = require('../models')
    await Anime.bulkCreate(
     [
