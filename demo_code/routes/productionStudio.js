@@ -146,5 +146,42 @@ router.get('/method', async (req, res) => {
     })
 })
 
+router.get('/agg', async (req, res) => {
+    const highestRating = await Anime.max('avgRating')
+    const lowestRating = await Anime.min('avgRating')
+    const numAnime = await Anime.count({
+        where: {
+            type: 'show'
+        }
+    })
+    // await Anime.findAll().length
+    const allEpisodes = await Anime.sum('numEpisodes', {
+        where: {
+            type: 'show'
+        }
+    })
+    const avgNumEpisodes = allEpisodes / numAnime
+    const bestAnimu = await Anime.findOne({
+        where: {
+            avgRating: highestRating
+        }
+    })
+
+    const bestAnimeObj = bestAnimu.toJSON();
+
+    // bestAnimeObj.highestRating = highestRating
+
+
+    res.json({
+        highestRating,
+        lowestRating,
+        numAnime,
+        allEpisodes,
+        avgNumEpisodes,
+        // bestAnimu,
+        ...bestAnimeObj
+    })
+})
+
 
 module.exports = router;
