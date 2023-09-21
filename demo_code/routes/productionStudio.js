@@ -124,5 +124,27 @@ router.get('/anime', async(req, res) => {
     res.json(anime)
 })
 
+router.get('/method', async (req, res) => {
+    const { title, releaseYear, numEpisodes, type, completed, avgRating } = req.body;
+    const anime = await Anime.findOne();
+    // const studio = await ProductionStudio.getByPk(anime.studioId)
+    const studio = await anime.getProductionStudio()
+    const genres = await anime.getGenres()
+
+    // const newAnime = await studio.createAnime({
+    //     title, releaseYear, numEpisodes, type, completed, avgRating
+    // });
+
+    const newAnimeGenre = await anime.addGenre(1);
+
+    res.json({
+        anime,
+        studio,
+        genres,
+        // newAnime,
+        newAnimeGenre
+    })
+})
+
 
 module.exports = router;
