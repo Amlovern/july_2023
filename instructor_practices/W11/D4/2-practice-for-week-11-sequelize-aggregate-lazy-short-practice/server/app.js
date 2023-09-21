@@ -72,19 +72,19 @@ app.get('/cats/:catId', async (req, res, next) => {
         STEP 2B: Calculate the total amount of toys that the cat is
         associated with.
     */
-    const toyCount;
+    // const toyCount;
 
     /*
         STEP 2C: Calculate the total price of all the toys that the cat is
         associated with
     */
-    const toyTotalPrice;
+    // const toyTotalPrice;
 
     /*
         STEP 2D: Calculate the average price of all the toys that the cat is
         associated with
     */
-    const toyAvgPrice;
+    // const toyAvgPrice;
 
     res.json({
         toyCount,
