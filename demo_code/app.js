@@ -36,7 +36,7 @@ app.get('/search', async (req, res) => {
     //     }
     // }
     if (maxLength) {
-        queryObj.where= sequelize.where(sequelize.fn('CHAR_LENGTH', sequelize.col('title')), { [Op.lte]: 10 })
+        queryObj.where= sequelize.where(sequelize.fn(value.length, sequelize.col('title')), { [Op.lte]: 10 })
         
     }
 
