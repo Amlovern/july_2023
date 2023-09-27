@@ -35,9 +35,15 @@ app.get('/search', async (req, res) => {
     //         [Op.lte]: maxLength
     //     }
     // }
+    let customFunc;
+    if (process.env.NODE_ENV === 'production') {
+        customFunc = 'char_length'
+    } else {
+        customFunc = 'length'
+    }
+
     if (maxLength) {
-        queryObj.where= sequelize.where(sequelize.fn(value.length, sequelize.col('title')), { [Op.lte]: 10 })
-        
+        queryObj.where= sequelize.where(sequelize.fn(customFunc, sequelize.col('title')), { [Op.lte]: parseInt(maxLength) })
     }
 
     if (genre) {
