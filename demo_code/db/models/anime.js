@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, Op
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Anime extends Model {
@@ -46,6 +46,28 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Anime',
+    defaultScope: {
+      attributes: {
+        exclude: ['createdAt', 'updatedAt', 'releaseYear']
+      }
+    },
+    scopes: {
+      'essentialData': {
+        attributes: ['title', 'releaseYear', 'numEpisodes', 'avgRating']
+      },
+      grabClassics(year) {
+        // if (this.releaseYear < 2000) return title
+        return {
+          where: {
+            releaseYear: {
+              [Op.lt]: year
+            }
+          },
+          attributes: ['title', 'releaseYear'],
+          order: [['releaseYear', 'DESC']]
+        }
+      }
+    }
   });
   return Anime;
 };
