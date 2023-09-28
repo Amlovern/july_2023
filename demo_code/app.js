@@ -3,7 +3,8 @@ const app = express();
 require('dotenv').config();
 const { Anime, Genre, sequelize } = require('./db/models')
 const { Op, Sequelize } = require('sequelize')
-const productionStudioRouter = require('./routes/productionStudio')
+const productionStudioRouter = require('./routes/productionStudio');
+const router = require('./routes/productionStudio');
 
 app.use(express.json());
 
@@ -60,6 +61,13 @@ app.get('/search', async (req, res) => {
     const anime = await Anime.findAll(queryObj)
 
     res.json(anime)
+})
+
+app.get('/scopes', async (req, res) => {
+    const { year } = req.query
+    const allAnime = await Anime.scope({method: ['grabClassics', year]}).findAll();
+
+    res.json(allAnime)
 })
 
 
