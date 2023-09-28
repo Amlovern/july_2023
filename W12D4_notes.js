@@ -55,5 +55,16 @@ A JWT consists of 3 parts:
     jwt.verify is used to verify a token
         verify takes in an optional 3rd arg: a callback function
 
+Bcrypt
+
+A tool to allow us to hash information
+Broken down into parts
+    Hashing algo
+    Cost factor
+        Tells bcrypt how many times to hash our password
+    Salt(22 chars)
+    Hash
+
+A high cost factor is more secure, but worst UX
 
 */
